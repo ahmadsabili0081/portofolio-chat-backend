@@ -94,7 +94,7 @@ export default async function handler(req, res) {
       const errText = await response.text();
       console.error('Gemini API error:', errText);
       // 429 here usually means the free-tier rate limit was hit
-      return res.status(502).json({ error: 'Upstream API error' });
+      return res.status(502).json({ error: 'Upstream API error' + `${errText}` });
     }
 
     const data = await response.json();
