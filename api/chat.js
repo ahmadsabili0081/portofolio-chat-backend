@@ -74,7 +74,7 @@ export default async function handler(req, res) {
       parts: [{ text: turn.content }],
     }));
 
-    const model = 'gemini-2.5-flash'; // stable, free-tier eligible, good for a Q&A widget
+    const model = 'gemini-2.5-flash-lite'; // stable, free-tier eligible, good for a Q&A widget
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
     const response = await fetch(url, {
